@@ -14,23 +14,25 @@ export interface RoadmapLink {
   url: string;
 }
 
+export type CoursesLink = { label: string; url: string };
 export interface LearningArea {
   id: number;
   title: string;
+  coursesLink?: CoursesLink[];
   sections: LevelSection[];
   roadmapLinks: RoadmapLink[];
 }
 
 export const learningAreas: LearningArea[] = [
   {
-    id: 0,
-    title: "Backend Development",
-    sections: [],
-    roadmapLinks: [{ label: "Backend Roadmap", url: "https://roadmap.sh/backend" }],
-  },
-  {
     id: 1,
     title: "Node.js oraz Express.js",
+    coursesLink: [
+      {
+        label: "Node.js + Express.js",
+        url: "https://www.udemy.com/course/nodejs-the-complete-guide/learn/lecture/11561854?start=0#overview",
+      },
+    ],
     sections: [
       {
         level: "beginner",
@@ -38,11 +40,26 @@ export const learningAreas: LearningArea[] = [
         items: [
           { id: "1-b-1", label: "Node.js runtime i event loop" },
           { id: "1-b-2", label: "System modułów (CommonJS, ES Modules)" },
-          { id: "1-b-3", label: "Asynchroniczność (callbacks, promises, async/await)" },
-          { id: "1-b-4", label: "File System API i podstawowe operacje na plikach" },
-          { id: "1-b-5", label: "Express.js podstawy: routing, middleware, request/response" },
-          { id: "1-b-6", label: "Tworzenie prostych REST API (CRUD operations)" },
-          { id: "1-b-7", label: "Obsługa JSON, query parameters, route parameters" },
+          {
+            id: "1-b-3",
+            label: "Asynchroniczność (callbacks, promises, async/await)",
+          },
+          {
+            id: "1-b-4",
+            label: "File System API i podstawowe operacje na plikach",
+          },
+          {
+            id: "1-b-5",
+            label: "Express.js podstawy: routing, middleware, request/response",
+          },
+          {
+            id: "1-b-6",
+            label: "Tworzenie prostych REST API (CRUD operations)",
+          },
+          {
+            id: "1-b-7",
+            label: "Obsługa JSON, query parameters, route parameters",
+          },
         ],
       },
       {
@@ -53,9 +70,15 @@ export const learningAreas: LearningArea[] = [
           { id: "1-i-2", label: "Child processes i worker threads" },
           { id: "1-i-3", label: "Error handling i custom error middleware" },
           { id: "1-i-4", label: "Request validation (express-validator, Joi)" },
-          { id: "1-i-5", label: "Authentication & Authorization (JWT, sessions)" },
+          {
+            id: "1-i-5",
+            label: "Authentication & Authorization (JWT, sessions)",
+          },
           { id: "1-i-6", label: "File uploads i multer" },
-          { id: "1-i-7", label: "Rate limiting i security best practices (helmet, cors)" },
+          {
+            id: "1-i-7",
+            label: "Rate limiting i security best practices (helmet, cors)",
+          },
           { id: "1-i-8", label: "Environment variables i konfiguracja (.env)" },
         ],
       },
@@ -63,7 +86,10 @@ export const learningAreas: LearningArea[] = [
         level: "advanced",
         labelPL: "Zaawansowane",
         items: [
-          { id: "1-a-1", label: "Performance optimization (clustering, caching)" },
+          {
+            id: "1-a-1",
+            label: "Performance optimization (clustering, caching)",
+          },
           { id: "1-a-2", label: "Custom middleware patterns" },
           { id: "1-a-3", label: "WebSocket integration" },
           { id: "1-a-4", label: "Testing (Jest, Supertest)" },
@@ -73,19 +99,33 @@ export const learningAreas: LearningArea[] = [
         ],
       },
     ],
-    roadmapLinks: [{ label: "Node.js Roadmap", url: "https://roadmap.sh/nodejs" }],
+    roadmapLinks: [
+      { label: "Node.js Roadmap", url: "https://roadmap.sh/nodejs" },
+    ],
   },
   {
     id: 2,
     title: "NestJS",
+    coursesLink: [
+      {
+        label: "NestJS",
+        url: "https://www.udemy.com/course/nestjs-zero-to-hero/",
+      },
+    ],
     sections: [
       {
         level: "beginner",
         labelPL: "Podstawy",
         items: [
-          { id: "2-b-1", label: "Architektura NestJS: Modules, Controllers, Providers" },
+          {
+            id: "2-b-1",
+            label: "Architektura NestJS: Modules, Controllers, Providers",
+          },
           { id: "2-b-2", label: "Dependency Injection i IoC container" },
-          { id: "2-b-3", label: "Routing i decoratory (@Get, @Post, @Param, @Body)" },
+          {
+            id: "2-b-3",
+            label: "Routing i decoratory (@Get, @Post, @Param, @Body)",
+          },
           { id: "2-b-4", label: "DTOs (Data Transfer Objects) i validation" },
           { id: "2-b-5", label: "Podstawowe pipes i guards" },
           { id: "2-b-6", label: "Exception filters" },
@@ -135,7 +175,10 @@ export const learningAreas: LearningArea[] = [
           { id: "3-b-2", label: "Data types i constraints" },
           { id: "3-b-3", label: "WHERE, ORDER BY, LIMIT, OFFSET" },
           { id: "3-b-4", label: "INNER JOIN, LEFT JOIN" },
-          { id: "3-b-5", label: "Podstawowe funkcje agregujące (COUNT, SUM, AVG)" },
+          {
+            id: "3-b-5",
+            label: "Podstawowe funkcje agregujące (COUNT, SUM, AVG)",
+          },
           { id: "3-b-6", label: "GROUP BY i HAVING" },
           { id: "3-b-7", label: "Primary keys i foreign keys" },
         ],
@@ -145,7 +188,10 @@ export const learningAreas: LearningArea[] = [
         labelPL: "PostgreSQL - Rozwój",
         items: [
           { id: "3-i-1", label: "Complex JOINs (FULL OUTER, CROSS)" },
-          { id: "3-i-2", label: "Subqueries i CTEs (Common Table Expressions)" },
+          {
+            id: "3-i-2",
+            label: "Subqueries i CTEs (Common Table Expressions)",
+          },
           { id: "3-i-3", label: "Indexes i query optimization" },
           { id: "3-i-4", label: "Transactions i ACID properties" },
           { id: "3-i-5", label: "Views i materialized views" },
@@ -159,7 +205,10 @@ export const learningAreas: LearningArea[] = [
         items: [
           { id: "3-a-1", label: "Stored procedures i functions" },
           { id: "3-a-2", label: "Triggers i events" },
-          { id: "3-a-3", label: "Advanced indexing strategies (B-tree, GiST, GIN)" },
+          {
+            id: "3-a-3",
+            label: "Advanced indexing strategies (B-tree, GiST, GIN)",
+          },
           { id: "3-a-4", label: "Partitioning i sharding" },
           { id: "3-a-5", label: "Full-text search" },
           { id: "3-a-6", label: "JSON/JSONB operations" },
@@ -171,7 +220,10 @@ export const learningAreas: LearningArea[] = [
         labelPL: "MongoDB - Podstawy",
         items: [
           { id: "3-mb-1", label: "Document model i collections" },
-          { id: "3-mb-2", label: "CRUD operations (insertOne, find, updateOne, deleteOne)" },
+          {
+            id: "3-mb-2",
+            label: "CRUD operations (insertOne, find, updateOne, deleteOne)",
+          },
           { id: "3-mb-3", label: "Query operators ($eq, $gt, $lt, $in)" },
           { id: "3-mb-4", label: "Podstawowe projection" },
           { id: "3-mb-5", label: "Sort, limit, skip" },
@@ -266,7 +318,10 @@ export const learningAreas: LearningArea[] = [
           { id: "5-db-1", label: "Containers vs Virtual Machines" },
           { id: "5-db-2", label: "Docker images i containers" },
           { id: "5-db-3", label: "Dockerfile syntax" },
-          { id: "5-db-4", label: "Basic docker commands (build, run, stop, ps)" },
+          {
+            id: "5-db-4",
+            label: "Basic docker commands (build, run, stop, ps)",
+          },
           { id: "5-db-5", label: "Port mapping i volumes" },
           { id: "5-db-6", label: "Docker Hub i registry" },
         ],
@@ -332,7 +387,23 @@ export const learningAreas: LearningArea[] = [
         ],
       },
     ],
-    roadmapLinks: [{ label: "Docker Roadmap", url: "https://roadmap.sh/docker" }],
+    roadmapLinks: [
+      { label: "Docker Roadmap", url: "https://roadmap.sh/docker" },
+    ],
+    coursesLink: [
+      {
+        label: "Docker - JS Mystery",
+        url: "https://www.youtube.com/watch?v=GFgJkfScVNU&t=26s",
+      },
+      {
+        label: "Docker - Freecodecamp",
+        url: "https://www.youtube.com/watch?v=fqMOX6JJhGo&t=1s",
+      },
+      {
+        label: "Github Actions",
+        url: "https://www.youtube.com/watch?v=Xwpi0ITkL3U",
+      },
+    ],
   },
   {
     id: 6,
@@ -348,7 +419,10 @@ export const learningAreas: LearningArea[] = [
           { id: "6-b-4", label: "Terraform init, plan, apply" },
           { id: "6-b-5", label: "State management basics" },
           { id: "6-b-6", label: "Variables i outputs" },
-          { id: "6-b-7", label: "Basic resource types (compute, network, storage)" },
+          {
+            id: "6-b-7",
+            label: "Basic resource types (compute, network, storage)",
+          },
         ],
       },
       {
@@ -380,6 +454,16 @@ export const learningAreas: LearningArea[] = [
       },
     ],
     roadmapLinks: [],
+    coursesLink: [
+      {
+        label: "Youtube - Freecodecamp",
+        url: "https://www.youtube.com/watch?v=EtEb40LE5zQ",
+      },
+      {
+        label: "Youtube - Terraform",
+        url: "https://www.youtube.com/watch?v=7xngnjfIlK4",
+      },
+    ],
   },
   {
     id: 7,
@@ -391,7 +475,10 @@ export const learningAreas: LearningArea[] = [
         items: [
           { id: "7-b-1", label: "SOLID principles" },
           { id: "7-b-2", label: "DRY, KISS, YAGNI" },
-          { id: "7-b-3", label: "Basic design patterns (Factory, Singleton, Strategy)" },
+          {
+            id: "7-b-3",
+            label: "Basic design patterns (Factory, Singleton, Strategy)",
+          },
           { id: "7-b-4", label: "Code organization i separation of concerns" },
           { id: "7-b-5", label: "Clean Code principles" },
           { id: "7-b-6", label: "Version control best practices" },
@@ -402,7 +489,10 @@ export const learningAreas: LearningArea[] = [
         level: "intermediate",
         labelPL: "Rozwój",
         items: [
-          { id: "7-i-1", label: "Advanced design patterns (Observer, Decorator, Adapter)" },
+          {
+            id: "7-i-1",
+            label: "Advanced design patterns (Observer, Decorator, Adapter)",
+          },
           { id: "7-i-2", label: "Architectural patterns (MVC, MVP, MVVM)" },
           { id: "7-i-3", label: "RESTful API design best practices" },
           { id: "7-i-4", label: "Scalability basics (horizontal vs vertical)" },
@@ -431,7 +521,10 @@ export const learningAreas: LearningArea[] = [
     roadmapLinks: [
       { label: "Design System", url: "https://roadmap.sh/design-system" },
       { label: "System Design", url: "https://roadmap.sh/system-design" },
-      { label: "Software Architecture", url: "https://roadmap.sh/software-design-architecture" },
+      {
+        label: "Software Architecture",
+        url: "https://roadmap.sh/software-design-architecture",
+      },
       { label: "API Design", url: "https://roadmap.sh/api-design" },
     ],
   },
@@ -517,6 +610,16 @@ export const learningAreas: LearningArea[] = [
       },
     ],
     roadmapLinks: [{ label: "AWS Roadmap", url: "https://roadmap.sh/aws" }],
+    coursesLink: [
+      {
+        label: "AWS Cloud Practitioner",
+        url: "https://www.udemy.com/course/aws-certified-cloud-practitioner-new/",
+      },
+      {
+        label: "AWS AI Practitioner",
+        url: "https://www.udemy.com/course/aws-ai-practitioner-certified/?couponCode=NVD20PMUS&utm_campaign=Search_Keyword_Alpha_Prof_la.ES_cc.ROW-Spanish&utm_source=google&utm_medium=paid-search&portfolio=ROW-Spanish&mx&utm_tactic=nb&utm_term=&utm_content=g&funnel=&test=&gad_source=1&gad_campaignid=21487757262&gbraid=0AAAAADROdO0-E4deaWKoZGIaB_LQcqMxM",
+      },
+    ],
   },
   {
     id: 9,
@@ -529,7 +632,10 @@ export const learningAreas: LearningArea[] = [
           { id: "9-jb-1", label: "Data types i variables (let, const, var)" },
           { id: "9-jb-2", label: "Operators i control flow" },
           { id: "9-jb-3", label: "Functions (declaration, expression, arrow)" },
-          { id: "9-jb-4", label: "Arrays i array methods (map, filter, reduce)" },
+          {
+            id: "9-jb-4",
+            label: "Arrays i array methods (map, filter, reduce)",
+          },
           { id: "9-jb-5", label: "Objects i destructuring" },
           { id: "9-jb-6", label: "ES6+ features (spread, rest)" },
           { id: "9-jb-7", label: "Template literals" },
@@ -542,7 +648,10 @@ export const learningAreas: LearningArea[] = [
           { id: "9-ji-1", label: "Closures i scope" },
           { id: "9-ji-2", label: "Prototypes i inheritance" },
           { id: "9-ji-3", label: "this keyword i binding" },
-          { id: "9-ji-4", label: "Asynchronous JavaScript (callbacks, promises, async/await)" },
+          {
+            id: "9-ji-4",
+            label: "Asynchronous JavaScript (callbacks, promises, async/await)",
+          },
           { id: "9-ji-5", label: "Error handling (try/catch)" },
           { id: "9-ji-6", label: "Modules (import/export)" },
           { id: "9-ji-7", label: "Higher-order functions" },
@@ -567,7 +676,10 @@ export const learningAreas: LearningArea[] = [
         labelPL: "TypeScript - Podstawy",
         items: [
           { id: "9-tb-1", label: "Type annotations" },
-          { id: "9-tb-2", label: "Basic types (string, number, boolean, array)" },
+          {
+            id: "9-tb-2",
+            label: "Basic types (string, number, boolean, array)",
+          },
           { id: "9-tb-3", label: "Interfaces" },
           { id: "9-tb-4", label: "Type aliases" },
           { id: "9-tb-5", label: "Union i intersection types" },
@@ -606,6 +718,15 @@ export const learningAreas: LearningArea[] = [
     roadmapLinks: [
       { label: "JavaScript Roadmap", url: "https://roadmap.sh/javascript" },
       { label: "TypeScript Roadmap", url: "https://roadmap.sh/typescript" },
+    ],
+  },
+
+  {
+    id: 10,
+    title: "Backend Development",
+    sections: [],
+    roadmapLinks: [
+      { label: "Backend Roadmap", url: "https://roadmap.sh/backend" },
     ],
   },
 ];
