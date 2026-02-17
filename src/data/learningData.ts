@@ -609,11 +609,11 @@ export const learningAreas: LearningArea[] = [
     roadmapLinks: [{ label: "AWS Roadmap", url: "https://roadmap.sh/aws" }],
     coursesLink: [
       {
-        label: "Youtube - AWS Cloud Practitioner",
+        label: "AWS Cloud Practitioner",
         url: "https://www.udemy.com/course/aws-certified-cloud-practitioner-new/",
       },
       {
-        label: "Youtube - AWS AI Practitioner",
+        label: "AWS AI Practitioner",
         url: "https://www.udemy.com/course/aws-ai-practitioner-certified/?couponCode=NVD20PMUS&utm_campaign=Search_Keyword_Alpha_Prof_la.ES_cc.ROW-Spanish&utm_source=google&utm_medium=paid-search&portfolio=ROW-Spanish&mx&utm_tactic=nb&utm_term=&utm_content=g&funnel=&test=&gad_source=1&gad_campaignid=21487757262&gbraid=0AAAAADROdO0-E4deaWKoZGIaB_LQcqMxM",
       },
     ],
