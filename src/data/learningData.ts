@@ -28,7 +28,10 @@ export const learningAreas: LearningArea[] = [
     id: 1,
     title: "Node.js oraz Express.js",
     coursesLink: [
-      { label: "Node.js + Express.js", url: "https://www.udemy.com/course/" },
+      {
+        label: "Node.js + Express.js",
+        url: "https://www.udemy.com/course/nodejs-the-complete-guide/learn/lecture/11561854?start=0#overview",
+      },
     ],
     sections: [
       {
