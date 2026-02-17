@@ -11,8 +11,6 @@ export function CoursesLink({ links, areaTitle }: CoursesLinkProps) {
   if (!links) return null;
   if (links?.length === 0) return null;
 
-  console.log("Links inside the CoursesLink component:", links);
-
   return (
     <div className="mt-6">
       <Separator className="mb-4 bg-[#30363D]" />

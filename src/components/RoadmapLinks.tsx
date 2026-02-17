@@ -8,6 +8,7 @@ interface RoadmapLinksProps {
 }
 
 export function RoadmapLinks({ links, areaTitle }: RoadmapLinksProps) {
+  if (!links) return null;
   if (links.length === 0) return null;
 
   return (
